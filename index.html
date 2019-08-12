@@ -4,22 +4,27 @@
     <title>Country Search</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   </head>
   <body>
-
-    <nav role="navigation" class="nav">
-      <h2>Culture, News, & Weather</h2>
-      <div role="links" class="navbar">
-        <li>HEADER</li>
-        <li>Link1</li>
-        <li>link2</li>
-        <li>link3</li>
-      </div>
-    </nav>
+    <div class="navHide">
+      <nav role="navigation" class="nav" >
+        <h2>Culture, News, & Weather</h2>
+        <div role="links" class="navbar">
+          <li>HEADER</li>
+          <li>Link1</li>
+          <li>link2</li>
+          <li>link3</li>
+        </div>
+      </nav>
+    </div>  
 
     <main>
 
-      <section role="info on app">
+      <section role="info on app" class="info">
         <div class="maininfo">
           <h3>Info about app</h3>
         </div>
@@ -58,6 +63,30 @@
           </button>
         </div>
       </section>
+
+      <div class="navHide">
+        <section class="searchBlock">
+          <h3>
+              What country do you want to learn more about?
+          </h3>
+          <form class="countrySeach">
+            <select id="countryls">
+              <option value="1">Afghanistan</option>
+              <option value="1">Albania</option>
+              <option value="1">Algeria</option>
+              <option value="1">Andorra</option>
+              <option value="1">Angola</option>
+              <option value="1">Antigua and Barbuda</option>
+              <option value="1">Argentina</option>
+              <option value="1">Armenia</option>
+              <option value="1">Australia</option>
+              <option value="1">Austria</option>
+              <option value="1">Azerbaijan</option>
+            </select>
+            <button type="button">Search</button>
+          </form>
+        </section>
+      </div>
       
       <script src="major.js"></script>
     </main>  
