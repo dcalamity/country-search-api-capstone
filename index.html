@@ -10,7 +10,7 @@
     crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="navHide">
+    <div class="hide">
       <nav role="navigation" class="nav" >
         <h2>Culture, News, & Weather</h2>
         <div role="links" class="navbar">
@@ -64,7 +64,7 @@
         </div>
       </section>
 
-      <div class="navHide">
+      <div class="hide">
         <section class="searchBlock">
           <h3>
               What country do you want to learn more about?
@@ -83,12 +83,42 @@
               <option value="1">Austria</option>
               <option value="1">Azerbaijan</option>
             </select>
-            <button type="button">Search</button>
+            <button type="button" class="search">Search</button>
           </form>
         </section>
       </div>
+
+      <div class="rhide">
+        <div class="resultsBlock" >
+
+          <section role="weather results" class="apResults">
+            <h1>Weather</h1>
+            <p>Breakfast procuring nay end happiness allowance assurance frankness. Met simplicity nor difficulty unreserved who. </p>
+          </section>
+
+          <section role="wiki results" class="apResults">
+            <h1>Wiki</h1>
+            <p>Breakfast procuring nay end happiness allowance assurance frankness. Met simplicity nor difficulty unreserved who. </p>
+          </section>
+
+          <section role="news results" class="apResults">
+            <h1>News</h1>
+            <p>Breakfast procuring nay end happiness allowance assurance frankness. Met simplicity nor difficulty unreserved who. </p>
+          </section>
+        </div>
+      </div>
       
+      <div class="rhide">
+        <div class="youTubeResults"> 
+          <section role="video results" class="yResults">
+            <h1>Youtube</h1>
+            <p>Breakfast procuring nay end happiness allowance assurance frankness. Met simplicity nor difficulty unreserved who. </p>
+          </section>
+        </div>  
+      </div>
+
       <script src="major.js"></script>
+
     </main>  
   </body>
 </html>
