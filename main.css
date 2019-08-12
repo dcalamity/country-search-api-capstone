@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0%;
+
+}
+
+/* whole navigavtion bar  */
+.nav {
+  background-color: lightgray;
+  list-style: none;
+  text-align: center;
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* tittle on top left */
+
+nav h2 {
+  margin: 0%;
+}
+
+/* the link bar on the top right */
+
+.navbar {
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center 
+}
+
+/* list of links on the top right */
+
+li {
+  margin: 0px 3px;
+  
+}
+
+.maininfo {
+  background-color: lightgrey;
+  display: flex;
+  margin: 5%;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.apinfo {
+  display: flex;
+  margin: 5%;
+  border-radius: 5px;
+  justify-content: space-evenly;
+}
+
+.pinfo{
+  margin-left: 1px;
+  width: 20%;
+  background-color: lightgrey;
+  text-align: center;
+  padding: 2%;
+}
+
+.start{
+  background-color: lightgrey;
+  display: flex;
+  margin: 5%;
+  flex-direction: column;
+  padding: 1%;
+  align-items: center;
+  border-radius: 5px;
+}
+
+main section div h2 {
+  display: flex;
+  
+}
+
+.startbutton {
+  width: 10%;
+  padding: inherit;
+  border-radius: 5%;
+}
