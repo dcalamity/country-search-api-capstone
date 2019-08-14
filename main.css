@@ -65,7 +65,7 @@
     padding: 2%;
   }
 
-  .start{
+  .start, .restartBox{
     background-color: lightgrey;
     display: flex;
     margin: 5%;
@@ -80,32 +80,45 @@
     
   }
 
-  .startbutton {
+  .startbutton, .restart {
     width: 10%;
     padding: inherit;
     border-radius: 5%;
   }
-
+  .startbutton:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.884);
+  }
   .searchBlock{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 10%;
   }
 
   .resultsBlock {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
   }
 
+  #countryls {
+    width: 200px;
+    font-size: 15px;
+    
+  }
+
+  /* This class covers the results of the top three API's  */
   .apResults {
     margin: 2%;
     width: 20%;
     background-color: lightgrey;
     text-align: center;
     padding: 2%;
+
   }
 
+
+  /* covers results from the youtuberesults */
   .youTubeResults{
     display: flex;
     justify-content: center;
@@ -117,4 +130,9 @@
     background-color: lightgrey;
     text-align: center;
     padding: 2%;
+  }
+
+  .restart:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.884);
   }
