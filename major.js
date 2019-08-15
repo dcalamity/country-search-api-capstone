@@ -1,11 +1,14 @@
-'use strict';
+  'use strict';
 
 
-const weatherkey = '01dd76c234fd91af1d022bb5b85eb549';
-const weatherSearchUrl = "https://api.openweathermap.org/data/2.5/weather";
+  const weatherkey = '01dd76c234fd91af1d022bb5b85eb549';
+  const weatherSearchUrl = "https://api.openweathermap.org/data/2.5/weather";
 
-const fUnit = "imperial";
-
+  const fUnit = "imperial";
+  //#2
+  // This function checks for a click on the start button. It displays and classes that have the hide class and they are overruled by the display block css
+  // Also hides the landing page elements. 
+  //enables the function to search for the country
   function startTheSearch (){
     $('.start').on('click','.startbutton', function(event){
       //alert('start button pressed');
@@ -17,13 +20,17 @@ const fUnit = "imperial";
     })
 
   };
-
+  //#5
+  // This function formats the parameters and their keys so that they could be combined when requesting data. 
   function formatQueryParams(params){
     const queryItems = Object.keys(params).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
     return queryItems.join('&');
     
   }
-
+  //#3
+  // This function is watching for a click on the search button
+  // The event hides the search clock it saves the value of the selected element and creates a variable for the name and the value. 
+  // The variables then get inputed into the paramenter for the get weather function. 
   function searchCountry (){
     $('.searchBlock').on('click', '.search',  function(event){
       // alert('search initiated')
@@ -37,6 +44,14 @@ const fUnit = "imperial";
     })
     
   }
+  
+  //#4
+  // This function fetches the the data. 
+  // First we create and object with the parameters needed for the search. 
+  //  Second we send those parameters to the format function
+  // Third we combine the weather URL and the new formated query parameters
+  // Fourth we check if the response is ok, if it is it returns the data into a Json formatt
+  // Last but not least we push the data into another function that displays the data onto out DOM.
 
   function getTheWeather(countryId, countryName) {
     const params = {
@@ -64,14 +79,9 @@ const fUnit = "imperial";
     });
     $('.rhide').css('display', 'block');
   }
-  //instead received the temp in the format we wanted from API
-  // function converstion (temp){
-  //   let fahtValue = 9 / 5 * (temp - 273) + 32;
-  //   let round = Math.round(fahtValue);
-  //   console.log(round)
-  //   return round;
-  // }
   
+  // #6
+  // This function adds the data into the ID where the data will be represented and displayed. 
   function displayWeatherResults(responseJson, countryName){
     $('#weatherResults').empty();
     console.log(responseJson)
@@ -82,17 +92,18 @@ const fUnit = "imperial";
         <li>${responseJson.main.temp} &#8457</li>`
       )
   }
-
+  //#1
   //function listens for the the restart button being pressed
-function restartQuiz() {
-  $('.restartBox').on('click', '.restart', function(event){
-      event.preventDefault()
-      console.log('clicked on restart button')
-      window.location.reload();
-  }
-)}
+  function restartQuiz() {
+    $('.restartBox').on('click', '.restart', function(event){
+        event.preventDefault()
+        console.log('clicked on restart button')
+        window.location.reload();
+    }
+  )}
 
 
+  
   function start (){
     $(startTheSearch)
     $(restartQuiz)
