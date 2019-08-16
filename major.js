@@ -3,8 +3,8 @@
 
   const weatherkey = '01dd76c234fd91af1d022bb5b85eb549';
   const weatherSearchUrl = "https://api.openweathermap.org/data/2.5/weather";
-
   const fUnit = "imperial";
+
   //#2
   // This function checks for a click on the start button. It displays and classes that have the hide class and they are overruled by the display block css
   // Also hides the landing page elements. 
@@ -39,12 +39,45 @@
       const countryName = $("#countryls option:selected").text();
       console.log(countryId);
       console.log(countryName);
-      getTheWeather(countryId, countryName)
-      
+      getTheWeather(countryId, countryName);
+      getWikiResults(countryName);
     })
     
   }
-  
+  function getWikiResults (searchTerm){
+    // encodeURIComponent() Function This function encodes special characters. In addition, it encodes the following characters: , / ? : @ & = + $ #
+    // https://www.w3schools.com/jsref/jsref_encodeURIComponent.asp
+     $.ajax({
+            url: "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages|extracts&generator=search&plimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrlimit=10&callback=?&gsrsearch=" + encodeURIComponent(searchTerm),
+            type: "GET",
+            dataType: 'jsonp'
+        })
+        /* if the call is successful (status 200 OK) show results */
+        .done(function(result) {
+            /* if the results are meeningful, we can just console.log them */
+            console.log(result);
+            console.log(result.query.pages[737].title);
+            if (result.query.length != 0){
+              let pageIDArray = Object.keys(result.query.pages);
+              pageIDArray.forEach(pageID => showWikiResults(pageID, result.query.pages[pageID].title, result.query.pages[pageID].extract, result.query.pages[pageID].thumbnail));
+            //  showWikiResults(result.query.pages); 
+            // result.query.pages.map(showWikiResults);
+            }
+            else {
+              alert('no results');
+            }
+        })
+        /* if the call is NOT successful show errors */
+        .fail(function(jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+  }
+
+  function showWikiResults(pageID, pageTitle, pageExtract, pageThumnail){
+    console.log(pageID, pageTitle, pageExtract, pageThumnail);
+  }
   //#4
   // This function fetches the the data. 
   // First we create and object with the parameters needed for the search. 
