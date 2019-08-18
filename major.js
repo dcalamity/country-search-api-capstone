@@ -4,6 +4,8 @@
   const weatherkey = '01dd76c234fd91af1d022bb5b85eb549';
   const weatherSearchUrl = "https://api.openweathermap.org/data/2.5/weather";
   const fUnit = "imperial";
+  const newsSearchURL = "https://newsapi.org/v2/top-headlines";
+  const newsAPIKey = 'd7ac7ad4b67b4f8fa9f9e08e2a0210ac';
 
   //#2
   // This function checks for a click on the start button. It displays and classes that have the hide class and they are overruled by the display block css
@@ -42,13 +44,14 @@
       getTheWeather(countryId, countryName);
       getWikiResults(countryName);
     })
-    
   }
+  
+
   function getWikiResults (searchTerm){
     // encodeURIComponent() Function This function encodes special characters. In addition, it encodes the following characters: , / ? : @ & = + $ #
     // https://www.w3schools.com/jsref/jsref_encodeURIComponent.asp
      $.ajax({
-            url: "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages|extracts&generator=search&plimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrlimit=10&callback=?&gsrsearch=" + encodeURIComponent(searchTerm),
+            url: "https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages|extracts|pageterms&piprop=thumbnail&pithumbsize=1020&generator=search&plimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrlimit=1&callback=?&gsrsearch=" + encodeURIComponent(searchTerm),
             type: "GET",
             dataType: 'jsonp'
         })
@@ -56,7 +59,7 @@
         .done(function(result) {
             /* if the results are meeningful, we can just console.log them */
             console.log(result);
-            console.log(result.query.pages[737].title);
+            //console.log(result.query.pages[737].title);
             if (result.query.length != 0){
               let pageIDArray = Object.keys(result.query.pages);
               pageIDArray.forEach(pageID => showWikiResults(pageID, result.query.pages[pageID].title, result.query.pages[pageID].extract, result.query.pages[pageID].thumbnail));
@@ -76,7 +79,17 @@
   }
 
   function showWikiResults(pageID, pageTitle, pageExtract, pageThumnail){
-    console.log(pageID, pageTitle, pageExtract, pageThumnail);
+   //let dataThumnail = Object.keys(pageThumnail).map(key => ({key, value: pageThumnail[key]}));
+   //console.log(dataThumnail[0].value);
+   console.log(pageThumnail.source)
+
+    console.log(pageTitle, pageExtract, pageThumnail);
+      $('#wikiResults').empty();
+      $('#wikiResults').append(
+        `<h2>${pageTitle} </h2>
+        <p>${pageExtract}</p>
+        <img id="wikiImage" src="${pageThumnail.source}" alt="image pertaining to"${pageTitle}>`      
+      )
   }
   //#4
   // This function fetches the the data. 

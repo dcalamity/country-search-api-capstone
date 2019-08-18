@@ -136,3 +136,12 @@
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.884);
   }
+
+  #wikiResults {
+    font-size: 15px;
+  }
+
+  #wikiImage {
+    width: 100%;
+    height: auto;
+  }
