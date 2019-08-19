@@ -53,6 +53,7 @@
     const params = {
       q: searchTerm,
       part: 'snippet',
+      maxResults: '6',
       type: 'video',
       key: youtubeAPIKey,
     }
@@ -76,8 +77,18 @@
   }
 
     function displayYoutubeResults(videoResults){
-      
-    }
+      console.log(videoResults)
+      $('.youTubeResults').empty();
+      for (let i = 0; i < videoResults.items.length; i++){
+        $('.youTubeResults').append(
+          `<section role="video results" class="yResults" class="yTubeResultBox"><h3>${videoResults.items[i].snippet.title}</h3>
+          <p>${videoResults.items[i].snippet.description}</p>
+          <a href="https://www.youtube.com/watch?v=${videoResults.items[0].id.videoId}">
+          <img class="videoImage" src='${videoResults.items[i].snippet.thumbnails.high.url}'>
+          </a></section>`
+        
+      )}
+    };
   
 
   function searchHeadLines (searchTerm){
