@@ -4,9 +4,9 @@
   const weatherkey = '01dd76c234fd91af1d022bb5b85eb549';
   const weatherSearchUrl = "https://api.openweathermap.org/data/2.5/weather";
   const fUnit = "imperial";
-  const newsSearchURL = "https://newsapi.org/v2/top-headlines";
+  const newsSearchURL = "https://newsapi.org/v2/everything";
   const newsAPIKey = 'd7ac7ad4b67b4f8fa9f9e08e2a0210ac';
-
+  const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search";
   //#2
   // This function checks for a click on the start button. It displays and classes that have the hide class and they are overruled by the display block css
   // Also hides the landing page elements. 
@@ -43,9 +43,57 @@
       console.log(countryName);
       getTheWeather(countryId, countryName);
       getWikiResults(countryName);
+      searchHeadLines(countryName);
     })
   }
   
+  function youtubeSeach (searchTerm){
+
+  }
+
+  
+
+  function searchHeadLines (searchTerm){
+    const params = {
+      q: searchTerm, 
+      language: "en",
+      sortBy: "popularity", 
+      apiKey: newsAPIKey,
+    }
+
+    const newsQueryString = formatQueryParams(params)
+    //console.log(newsQueryString);
+
+    const url = newsSearchURL + '?' + newsQueryString;
+    console.log(url);
+
+    fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText)
+      })
+      .then(responseJson => displayNewsResults(responseJson))
+      .catch(err => {
+        $('#js-error-message').text(`Something went wrong with news: ${err.message} `);
+      })
+  }
+
+  function displayNewsResults (newsResults){
+    console.log(newsResults);
+    console.log(newsResults.articles[0].url);
+    $('#newsResults').empty();
+    for(let i = 0; i < 1 ; i++){
+      $('#newsResults').append(
+        `<li><h3><a href="${newsResults.articles[i].url}">
+        ${newsResults.articles[i].title}</a></h3><p>${newsResults.articles[i].source.name}</p>
+        <p>By ${newsResults.articles[i].author}</p>
+        <p>${newsResults.articles[i].description}</p>
+        <p>${newsResults.articles[i].publishedAt}</p>
+        <img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/></li>`
+    )}
+  }
 
   function getWikiResults (searchTerm){
     // encodeURIComponent() Function This function encodes special characters. In addition, it encodes the following characters: , / ? : @ & = + $ #
@@ -130,7 +178,7 @@
   // This function adds the data into the ID where the data will be represented and displayed. 
   function displayWeatherResults(responseJson, countryName){
     $('#weatherResults').empty();
-    console.log(responseJson)
+    //console.log(responseJson)
       $('#weatherResults').append(
 
         `<h2>The weather in ${countryName} </h2>

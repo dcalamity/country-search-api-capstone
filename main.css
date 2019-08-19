@@ -98,7 +98,7 @@
 
   .resultsBlock {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
   #countryls {
@@ -108,13 +108,12 @@
   }
 
   /* This class covers the results of the top three API's  */
-  .apResults {
+  .apWikiResults, .apNewsResults, .apWeatherResults {
     margin: 2%;
     width: 20%;
     background-color: lightgrey;
     text-align: center;
     padding: 2%;
-
   }
 
 
@@ -145,3 +144,9 @@
     width: 100%;
     height: auto;
   }
+
+  #newsResults {
+    list-style: none;
+    text-align: left;
+  }
+  
