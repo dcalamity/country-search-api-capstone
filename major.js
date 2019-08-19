@@ -7,6 +7,7 @@
   const newsSearchURL = "https://newsapi.org/v2/everything";
   const newsAPIKey = 'd7ac7ad4b67b4f8fa9f9e08e2a0210ac';
   const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search";
+  const youtubeAPIKey = 'AIzaSyCqH3556Tj7tUwmU0jLz7ttpC_YtExw80U';
   //#2
   // This function checks for a click on the start button. It displays and classes that have the hide class and they are overruled by the display block css
   // Also hides the landing page elements. 
@@ -44,13 +45,39 @@
       getTheWeather(countryId, countryName);
       getWikiResults(countryName);
       searchHeadLines(countryName);
+      youtubeSeach(countryName);
     })
   }
   
   function youtubeSeach (searchTerm){
+    const params = {
+      q: searchTerm,
+      part: 'snippet',
+      type: 'video',
+      key: youtubeAPIKey,
+    }
 
+    const videoQuery = formatQueryParams(params);
+    const videoURL = youtubeSearchURL + '?' + videoQuery;
+    //console.log(videoURL);
+
+    fetch(videoURL)
+      .then(response => {
+        if (response.ok){
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      })
+      .then(videoResults => displayYoutubeResults(videoResults))
+      .catch(err => {
+        $("#js-error-message").text(`Something went wrong: ${err.message}`);
+      })
+      
   }
 
+    function displayYoutubeResults(videoResults){
+      
+    }
   
 
   function searchHeadLines (searchTerm){
