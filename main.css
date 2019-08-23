@@ -177,7 +177,7 @@
   }
 
   /* This class covers the results of the top three API's  */
-  .apWikiResults, .apNewsResults, .apWeatherResults {
+  .apWikiResults, .apWeatherResults {
     margin: 2%;
     width: 27%;
     background-color: #f8f4f4;
@@ -186,6 +186,18 @@
     height: 0%;
     border-radius: 5px;
     margin-top: 10%;
+  }
+
+  .apNewsResults {
+    margin: 2%;
+    width: 27%;
+    background-color: #f8f4f4;
+    text-align: center;
+    padding: 2%;
+    height: 656px;
+    border-radius: 5px;
+    margin-top: 10%;
+    overflow-y:auto
   }
 
 

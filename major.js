@@ -124,7 +124,7 @@
     console.log(newsResults);
     console.log(newsResults.articles[0].url);
     $('#newsResults').empty();
-    for(let i = 0; i < 1 ; i++){
+    for(let i = 0; i < 6 ; i++){
       $('#newsResults').append(
         `<li><h3><a href="${newsResults.articles[i].url}">
         ${newsResults.articles[i].title}</a></h3><p>${newsResults.articles[i].source.name}</p>
