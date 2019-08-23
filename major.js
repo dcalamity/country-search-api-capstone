@@ -16,6 +16,7 @@
     $('.start').on('click','.startbutton', function(event){
       //alert('start button pressed');
       $('.hide').css('display','block');
+      $('body').css('background-image', 'none');
       $('.info').hide();
       $('.apinfo').hide();
       $('.start').hide();
@@ -38,6 +39,7 @@
     $('.searchBlock').on('click', '.search',  function(event){
       // alert('search initiated')
       $('.searchBlock').hide();
+      $('.hideNav').css('display','block');
       const countryId = $("#countryls option:selected").val();
       const countryName = $("#countryls option:selected").text();
       console.log(countryId);
@@ -83,7 +85,7 @@
         $('.youTubeResults').append(
           `<section role="video results" class="yResults" class="yTubeResultBox"><h3>${videoResults.items[i].snippet.title}</h3>
           <p>${videoResults.items[i].snippet.description}</p>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=${videoResults.items[0].id.videoId}">
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=${videoResults.items[i].id.videoId}">
           <img class="videoImage" src='${videoResults.items[i].snippet.thumbnails.high.url}'>
           </a></section>`
         
@@ -227,7 +229,7 @@
   //#1
   //function listens for the the restart button being pressed
   function restartQuiz() {
-    $('.restartBox').on('click', '.restart', function(event){
+    $('.restartBox').on('click', '.restartButton', function(event){
         event.preventDefault()
         console.log('clicked on restart button')
         window.location.reload();
