@@ -16,7 +16,6 @@
     $('.start').on('click','.startbutton', function(event){
       //alert('start button pressed');
       $('.hide').css('display','block');
-      $('body').css('background-image', 'none');
       $('.info').hide();
       $('.apinfo').hide();
       $('.start').hide();
@@ -39,6 +38,7 @@
     $('.searchBlock').on('click', '.search',  function(event){
       // alert('search initiated')
       $('.searchBlock').hide();
+      $('body').css('background-image', 'none');
       $('.hideNav').css('display','block');
       const countryId = $("#countryls option:selected").val();
       const countryName = $("#countryls option:selected").text();
@@ -72,8 +72,8 @@
         throw new Error(response.statusText);
       })
       .then(videoResults => displayYoutubeResults(videoResults))
-      .catch(err => {
-        $("#js-error-message").text(`Something went wrong: ${err.message}`);
+      .catch(error => {
+        $("#you-error-message").text(`Something went wrong with this video: ${error.message}`);
       })
       
   }
@@ -87,7 +87,7 @@
           <p>${videoResults.items[i].snippet.description}</p>
           <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=${videoResults.items[i].id.videoId}">
           <img class="videoImage" src='${videoResults.items[i].snippet.thumbnails.high.url}'>
-          </a></section>`
+          </a><p id="you-error-message" class="error-message"></p></section>`
         
       )}
     };
@@ -115,10 +115,13 @@
         throw new Error(response.statusText)
       })
       .then(responseJson => displayNewsResults(responseJson))
-      .catch(err => {
-        $('#js-error-message').text(`Something went wrong with news: ${err.message} `);
+      .catch(error => {
+        $('#news-error-message').text(`Something went wrong with the news: ${error.message} `);
       })
   }
+
+
+  // <p id="news-error-message" class="error-message"></p>
 
   function displayNewsResults (newsResults){
     console.log(newsResults);
@@ -126,12 +129,12 @@
     $('#newsResults').empty();
     for(let i = 0; i < 6 ; i++){
       $('#newsResults').append(
-        `<li><h3><a href="${newsResults.articles[i].url}">
-        ${newsResults.articles[i].title}</a></h3><p>${newsResults.articles[i].source.name}</p>
+        `<li><a href="${newsResults.articles[i].url}">
+        ${newsResults.articles[i].title}</a></<p><p>${newsResults.articles[i].source.name}</p>
         <p>By ${newsResults.articles[i].author}</p>
         <p>${newsResults.articles[i].description}</p>
         <p>${newsResults.articles[i].publishedAt}</p>
-        <img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/></li>`
+        <img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/></li><br>`
     )}
   }
 
@@ -155,7 +158,7 @@
             // result.query.pages.map(showWikiResults);
             }
             else {
-              alert('no results');
+              $('#wiki-error-message').text('sorry, there was an error with wiki')
             }
         })
         /* if the call is NOT successful show errors */
@@ -174,7 +177,8 @@
     console.log(pageTitle, pageExtract, pageThumnail);
       $('#wikiResults').empty();
       $('#wikiResults').append(
-        `<h2>${pageTitle} </h2>
+        `<h2>${pageTitle}</h2>
+        <p id="wiki-error-message" class="error-message"></p>
         <p>${pageExtract}</p>
         <img id="wikiImage" src="${pageThumnail.source}" alt="image pertaining to"${pageTitle}>`      
       )
@@ -207,8 +211,8 @@
       throw new Error(response.statusText);
     })
     .then(responseJson => displayWeatherResults(responseJson, countryName))
-    .catch(err => {
-      $('#js-error-message').text(`Something went wrong: ${err.message}`);
+    .catch(error => {
+      $('#js-error-message').text(`Something went wrong: ${error.message}`);
 
     });
     $('.rhide').css('display', 'block');
