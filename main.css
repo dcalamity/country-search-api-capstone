@@ -66,6 +66,10 @@
     
   }
 
+  .apinfo, .info, .start, .searchBlock{
+    opacity: .7;
+  }
+
   .maininfo {
     display: flex;
     margin: 5%;
@@ -260,4 +264,46 @@
   
   .videoImage{
     width: 100%;
+  }
+
+  @media only screen and (max-width: 480px){
+
+    .pinfo{
+      display: none;
+    }
+    .maininfo{
+    display: flex;
+    margin: 10%;
+    margin-top: 44%;
+    flex-direction: column;
+    padding: 1%;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    font-size: 14px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .start{
+      display: flex;
+      margin: 23%;
+      font-size: 13px;
+      text-align: center;
+      flex-direction: column;
+      padding: 1%;
+      margin-left: 25%;
+      margin-right: 25%;
+      align-items: center;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background: white;
+    }
+    .startbutton {
+    width: 45%;
+    height: 40px;
+    padding: inherit;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
   }
