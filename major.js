@@ -16,6 +16,7 @@
     $('.start').on('click','.startbutton', function(event){
       //alert('start button pressed');
       $('.hide').css('display','block');
+      
       $('.info').hide();
       $('.apinfo').hide();
       $('.start').hide();
@@ -38,7 +39,7 @@
     $('.searchBlock').on('click', '.search',  function(event){
       // alert('search initiated')
       $('.searchBlock').hide();
-      $('body').css('background-image', 'none');
+      $('*').css('background-image', 'none');
       $('.hideNav').css('display','block');
       const countryId = $("#countryls option:selected").val();
       const countryName = $("#countryls option:selected").text();
