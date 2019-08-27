@@ -151,6 +151,7 @@
     font-size: 16px;
     border-radius: 2px;
     margin-left: 35px;
+    margin-top: 15px;
   }
 
   .search:hover{
@@ -313,9 +314,10 @@
     }
 
     .searchBlock {
-      flex-direction: row;
+      flex-direction: column;
       margin: 56% 10% 5% 10%;
       font-size: 14px;
+      align-items: center;
     }
 
     .resultsBlock, .youTubeResults {
@@ -333,5 +335,10 @@
       height: 0%;
       border-radius: 5px;
       margin-top: 10%;
+    }
+
+    .countrySearch {
+      margin: auto;
+      width: 65%;
     }
   }
