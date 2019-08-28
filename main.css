@@ -231,7 +231,7 @@
     height: 656px;
     border-radius: 5px;
     margin-top: 10%;
-    overflow-y:auto
+    overflow-y: scroll;
   }
 
 
