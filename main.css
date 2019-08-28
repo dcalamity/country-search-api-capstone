@@ -253,6 +253,10 @@
     border-radius: 5px;
   }
 
+  .newsD{
+    font-family: 'Playfair Display', serif;
+  }
+
   #wikiResults {
     font-size: 15px;
   }

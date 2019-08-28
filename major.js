@@ -133,7 +133,7 @@
         `<li><img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/><a href="${newsResults.articles[i].url}">
         ${newsResults.articles[i].title}</a></<p><p>${newsResults.articles[i].source.name}</p>
         <p>By ${newsResults.articles[i].author}</p>
-        <p>${newsResults.articles[i].description}</p>
+        <p class="newsD">${newsResults.articles[i].description}</p>
         <p>${newsResults.articles[i].publishedAt}</p>
         </li><br>`
     )}
