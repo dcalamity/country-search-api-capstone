@@ -8,6 +8,19 @@
   const newsAPIKey = 'd7ac7ad4b67b4f8fa9f9e08e2a0210ac';
   const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search";
   const youtubeAPIKey = 'AIzaSyCqH3556Tj7tUwmU0jLz7ttpC_YtExw80U';
+
+  // scrolls to the top when clicked on the top left header in the navigation bar
+  $('#home').on('click', function (event){
+    event.preventDefault()
+    $('html, body').animate({
+      scrollTop: 0,
+    }, 'fast')
+  })
+
+
+
+
+
   //#2
   // This function checks for a click on the start button. It displays and classes that have the hide class and they are overruled by the display block css
   // Also hides the landing page elements. 
