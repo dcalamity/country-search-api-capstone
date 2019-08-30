@@ -17,9 +17,38 @@
     }, 'slow')
   })
 
+  $('#weatherNav').on('click', function(event){
+    event.preventDefault()
+    $('html, body').animate({
+      scrollTop: $('#weatherResults').offset()
+        .top,
+    }, 'fast')
 
+  })
 
+$('#wikiNav').on('click', function(event){
+  event.preventDefault()
+  $('html, body').animate({
+    scrollTop: $('#wikiResults').offset()
+      .top,
+  }, 'fast')
+})
 
+$('#newsNav').on('click', function(event){
+  event.preventDefault()
+  $('html, body').animate({
+    scrollTop: $('#newsResults').offset()
+      .top,
+  }, 'fast')
+})
+
+$('#videoNav').on('click', function(Event){
+  event.preventDefault()
+  $('html, body').animate({
+      scrollTop: $('#youtubeResults').offset()
+        .top,
+  }, 'fast')
+})
 
   //#2
   // This function checks for a click on the start button. It displays and classes that have the hide class and they are overruled by the display block css
@@ -97,7 +126,7 @@
       $('.youTubeResults').empty();
       for (let i = 0; i < videoResults.items.length; i++){
         $('.youTubeResults').append(
-          `<section role="video results" class="yResults" class="yTubeResultBox"><h3>${videoResults.items[i].snippet.title}</h3>
+          `<section role="video results" id="youtubeResults" class="yResults" class="yTubeResultBox"><h3>${videoResults.items[i].snippet.title}</h3>
           <p>${videoResults.items[i].snippet.description}</p>
           <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=${videoResults.items[i].id.videoId}">
           <img class="videoImage" src='${videoResults.items[i].snippet.thumbnails.high.url}'>
