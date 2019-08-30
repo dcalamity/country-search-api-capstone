@@ -128,7 +128,7 @@
     console.log(newsResults);
     console.log(newsResults.articles[0].url);
     $('#newsResults').empty();
-    for(let i = 0; i < 6 ; i++){
+    for(let i = 0; i < 10 ; i++){
       $('#newsResults').append(
         `<li><img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/><a href="${newsResults.articles[i].url}">
         ${newsResults.articles[i].title}</a></<p><p>${newsResults.articles[i].source.name}</p>
