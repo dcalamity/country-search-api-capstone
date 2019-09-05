@@ -170,6 +170,7 @@ $('#videoNav').on('click', function(Event){
     console.log(newsResults);
     console.log(newsResults.articles[0].url);
     $('#newsResults').empty();
+    // if author is null then display 
     for(let i = 0; i < 10 ; i++){
       $('#newsResults').append(
         `<li><img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/><a href="${newsResults.articles[i].url}">
