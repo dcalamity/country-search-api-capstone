@@ -1,402 +1,402 @@
   * {
-    box-sizing, border-box;
+    box-sizing: border-box;
   }
 
-  .body,,before {
-    content, "";
-    display, block;
-    position, fixed;
-    left, 0;
-    top, 0;
-    width, 100%;
-    height, 100%;
-    z-index, -10;
-    background, url(website-images/jasper-boer-KS70QiSOecM-unsplash.jpg) no-repeat center center;
-    -webkit-background-size, cover;
-    -moz-background-size, cover;
-    -o-background-size, cover;
-    background-size, cover;
+  .body::before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url(website-images/jasper-boer-KS70QiSOecM-unsplash.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
   
 
   .afterStart {
-    background-color, white;
+    background-color: white;
   }
 
   body {
-    margin, 0%;
+    margin: 0%;
   }
 
 
   /* whole navigavtion bar  */
   .nav {
-    background-color, #C9CDFF;
-    list-style, none;
-    padding, 1%;
-    display, flex;
-    justify-content, center;
-    box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    position, fixed;
-    top, 0;
-    width, 100%;
+    background-color: #C9CDFF;
+    list-style: none;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 
   .hideNav{
-    display, none;
+    display: none;
   }
 
   .hide, .rhide {
-    display, none;
+    display: none;
   }
   /* tittle on top left */
 
   nav h2 {
-    margin, 0%; 
+    margin: 0%; 
   }
 
   .nav {
-    justify-content, space-between;
+    justify-content: space-between;
   }
 
   .leftBar{
-    display, flex;
-    width, 100%;
-    align-items, center;
-    justify-content, flex-start;
-    flex-direction, row;
-    list-style, none;
-    margin, 0;
-    padding, 0;
-    font-size, 16px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
   }
   
   .rightBar{
-    display, flex;
-    width, 100%;
-    align-items, center;
-    justify-content, flex-end;
-    flex-direction, row;
-    list-style, none;
-    margin, 0;
-    padding, 0;
-    font-weight, bold;
-    font-size, 23px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 23px;
   }
 
   #weatherNav, #wikiNav, #newsNav, #videoNav, #home{
-    text-decoration, none;
-    color, inherit;
+    text-decoration: none;
+    color: inherit;
   }
 
   li {
-    margin, 0px 3px;
+    margin: 0px 3px;
   }
 
 
   .apinfo, .info, .start, .searchBlock{
-    opacity, .7;
+    opacity: .7;
   }
 
   .maininfo {
-    display, flex;
-    margin, 5%;
-    flex-direction, column;
-    padding, 1%;
-    align-items, center;
-    border-radius, 5px;
-    text-align, center;
-    background-color, white;
-    font-size, 20px;
-    box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    margin: 5%;
+    flex-direction: column;
+    padding: 1%;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    font-size: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   .apinfo {
-    display, flex;
-    margin, 5%;
-    border-radius, 5px;
-    justify-content, space-evenly;
+    display: flex;
+    margin: 5%;
+    border-radius: 5px;
+    justify-content: space-evenly;
   }
 
   .pinfo{
-    background-color, white;
-    margin-left, 1px;
-    width, 20%;
-    text-align, left;
-    padding, 2%;
-    text-align, center;
-    font-size, 20px;
-    border-radius, 5px;
-    box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    margin-left: 1px;
+    width: 20%;
+    text-align: left;
+    padding: 2%;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   .start {
-    display, flex;
-    /* margin, 27%; */
-    flex-direction, column;
-    padding, 1%;
-    margin-left, 25%;
-    margin-right, 25%;
-    align-items, center;
-    border-radius, 5px;
-    box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background, white;
+    display: flex;
+    /* margin: 27%; */
+    flex-direction: column;
+    padding: 1%;
+    margin-left: 25%;
+    margin-right: 25%;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: white;
   }
   
   #stBtn {
-    padding-bottom, 4%;
+    padding-bottom: 4%;
   }
 
    main section div h2 {
-    display, flex;
+    display: flex;
   }
 
   .startbutton {
-    width, 20%;
-    height, 40px;
-    padding, inherit;
-    border-radius, 3px;
-    box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 20%;
+    height: 40px;
+    padding: inherit;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .restartBox {
-    display, flex;
-    justify-content, center;
-    margin, 5%;
+    display: flex;
+    justify-content: center;
+    margin: 5%;
   }
 
   .search {
-    background-color,#e4e2e2d5;
-    border, none;
-    color, black;
-    padding, 3px 25px;
-    text-align, center;
-    text-decoration, none;
-    display, inline-block;
-    font-size, 16px;
-    border-radius, 2px;
-    margin-left, 35px;
-    margin-top, 15px;
+    background-color:#e4e2e2d5;
+    border: none;
+    color: black;
+    padding: 3px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 2px;
+    margin-left: 35px;
+    margin-top: 15px;
   }
 
-  .search,hover{
-    cursor, pointer;
-    background-color, #c7c2c2d3;
+  .search:hover{
+    cursor: pointer;
+    background-color: #c7c2c2d3;
   }
 
   .restartButton {
-    background-color,#f3f0f0d3;
-    border, none;
-    color, black;
-    padding, 15px 32px;
-    text-align, center;
-    text-decoration, none;
-    display, inline-block;
-    font-size, 16px;
-    box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:#f3f0f0d3;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .startbutton,hover{
-    cursor, pointer;
-    background-color, #d1ceceda;
+  .startbutton:hover{
+    cursor: pointer;
+    background-color: #d1ceceda;
   }
 
-  .restartButton,hover{
-    cursor, pointer;
-    background-color, rgba(206, 205, 205, 0.733);
+  .restartButton:hover{
+    cursor: pointer;
+    background-color: rgba(206, 205, 205, 0.733);
   }
 
   .searchFlex {
-    display, flex;
-    align-items, center;
-    justify-content, center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
   }
 
   .searchBlock{
-    display, flex;
-    flex-direction, column;
-    align-items, center;
-    background-color, #f8f4f4;
-    margin, 5% 10% 5% 10%;
-    padding, 3%;
-    border-radius, 5px;
-    box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f4f4;
+    margin: 5% 10% 5% 10%;
+    padding: 3%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   .resultsBlock {
-    display, flex;
-    justify-content, space-around;
+    display: flex;
+    justify-content: space-around;
   }
 
   #countryls {
-    width, 200px;
-    font-size, 15px;
+    width: 200px;
+    font-size: 15px;
     
   }
 
   /* This class covers the results of the top three API's  */
   .apWikiResults, .apWeatherResults {
-    margin, 2%;
-    width, 27%;
-    background-color, #f8f4f4;
-    text-align, center;
-    padding, 2%;
-    height, 0%;
-    border-radius, 5px;
-    margin-top, 10%;
+    margin: 2%;
+    width: 27%;
+    background-color: #f8f4f4;
+    text-align: center;
+    padding: 2%;
+    height: 0%;
+    border-radius: 5px;
+    margin-top: 10%;
   }
 
   .apNewsResults {
-    margin, 2%;
-    width, 27%;
-    background-color, #f8f4f4;
-    text-align, center;
-    padding, 2%;
-    height, 656px;
-    border-radius, 5px;
-    margin-top, 10%;
-    overflow-y, scroll;
+    margin: 2%;
+    width: 27%;
+    background-color: #f8f4f4;
+    text-align: center;
+    padding: 2%;
+    height: 656px;
+    border-radius: 5px;
+    margin-top: 10%;
+    overflow-y: scroll;
   }
 
 
   /* covers results from the youtuberesults */
   .youTubeResults{
-    display, flex;
-    flex-direction, row;
-    flex-wrap, wrap;
-    justify-content, center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .yResults {
-    margin-top, 5%;
-    width, 30%;
-    background-color, #f8f4f4;
-    text-align, center;
-    padding, 2%;
-    margin, 1%;
-    border-radius, 5px;
+    margin-top: 5%;
+    width: 30%;
+    background-color: #f8f4f4;
+    text-align: center;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 5px;
   }
 
   .newsD{
-    font-family, 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif;
   }
 
   #wikiResults {
-    font-size, 15px;
+    font-size: 15px;
   }
 
   #wikiImage {
-    width, 100%;
-    height, auto;
+    width: 100%;
+    height: auto;
   }
 
   #newsResults {
-    list-style, none;
-    text-align, left;
+    list-style: none;
+    text-align: left;
   }
   
   .videoImage{
-    width, 100%;
+    width: 100%;
   }
 
-  @media only screen and (max-width, 480px){
+  @media only screen and (max-width: 480px){
 
     .pinfo{
-      display, none;
+      display: none;
     }
     .maininfo{
-      display, flex;
-      margin, 10%;
-      margin-top, 44%;
-      flex-direction, column;
-      padding, 1%;
-      align-items, center;
-      border-radius, 5px;
-      text-align, center;
-      background-color, white;
-      font-size, 14px;
-      line-height, 23px;
-      box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      display: flex;
+      margin: 10%;
+      margin-top: 44%;
+      flex-direction: column;
+      padding: 1%;
+      align-items: center;
+      border-radius: 5px;
+      text-align: center;
+      background-color: white;
+      font-size: 14px;
+      line-height: 23px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .start{
-      display, flex;
-      margin, 23%;
-      font-size, 13px;
-      text-align, center;
-      flex-direction, column;
-      padding, 1%;
-      margin-left, 25%;
-      margin-right, 25%;
-      align-items, center;
-      border-radius, 5px;
-      box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      background, white;
+      display: flex;
+      margin: 23%;
+      font-size: 13px;
+      text-align: center;
+      flex-direction: column;
+      padding: 1%;
+      margin-left: 25%;
+      margin-right: 25%;
+      align-items: center;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background: white;
     }
     .startbutton {
-      width, 45%;
-      height, 40px;
-      padding, inherit;
-      border-radius, 3px;
-      box-shadow, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      width: 45%;
+      height: 40px;
+      padding: inherit;
+      border-radius: 3px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .searchBlock {
-      flex-direction, column;
-      margin, 56% 10% 5% 10%;
-      font-size, 14px;
-      align-items, center;
+      flex-direction: column;
+      margin: 56% 10% 5% 10%;
+      font-size: 14px;
+      align-items: center;
     }
 
     .resultsBlock, .youTubeResults {
-      display, flex;
-      flex-direction, column;
-      align-items, center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .apWikiResults, .apWeatherResults, .apNewsResults, .yResults {
-      margin, 0%;
-      width, 80%;
-      background-color, #f8f4f4;
-      text-align, center;
-      padding, 2%;
-      height, 0%;
-      border-radius, 5px;
-      margin-top, 10%;
+      margin: 0%;
+      width: 80%;
+      background-color: #f8f4f4;
+      text-align: center;
+      padding: 2%;
+      height: 0%;
+      border-radius: 5px;
+      margin-top: 10%;
     }
 
     .countrySearch {
-      margin, auto;
-      width, 65%;
+      margin: auto;
+      width: 65%;
     }
 
     .nav {
-      justify-content, space-between;
+      justify-content: space-between;
     }
 
     .leftBar{
-      display, flex;
-      width, 100%;
-      align-items, center;
-      justify-content, center;
-      flex-direction, row;
-      list-style, none;
-      margin, 0;
-      margin-right, 5px;
-      padding, 0;
-      font-size, 10px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      list-style: none;
+      margin: 0;
+      margin-right: 5px;
+      padding: 0;
+      font-size: 10px;
     }
     
     .rightBar{
-      display, flex;
-      width, 100%;
-      align-items, center;
-      justify-content, center;
-      flex-direction, row;
-      list-style, none;
-      margin, 0;
-      margin-left, 5px;
-      padding, 0;
-      font-weight, bold;
-      font-size, 14px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      list-style: none;
+      margin: 0;
+      margin-left: 5px;
+      padding: 0;
+      font-weight: bold;
+      font-size: 14px;
     }
   }

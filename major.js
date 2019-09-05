@@ -8,6 +8,7 @@
   const newsAPIKey = 'd7ac7ad4b67b4f8fa9f9e08e2a0210ac';
   const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search";
   const youtubeAPIKey = 'AIzaSyCqH3556Tj7tUwmU0jLz7ttpC_YtExw80U';
+  
 
   // scrolls to the top when clicked on the top left header in the navigation bar
   $('#home').on('click', function (event){
@@ -85,12 +86,13 @@ $('#videoNav').on('click', function(Event){
       $('.hideNav').css('display','block');
       const countryId = $("#countryls option:selected").val();
       const countryName = $("#countryls option:selected").text();
-      console.log(countryId);
-      console.log(countryName);
+      // console.log(countryId);
+      // console.log(countryName);
       getTheWeather(countryId, countryName);
       getWikiResults(countryName);
       searchHeadLines(countryName);
       youtubeSeach(countryName);
+
     })
   }
   
@@ -122,7 +124,7 @@ $('#videoNav').on('click', function(Event){
   }
 
     function displayYoutubeResults(videoResults){
-      console.log(videoResults)
+      // console.log(videoResults)
       $('.youTubeResults').empty();
       for (let i = 0; i < videoResults.items.length; i++){
         $('.youTubeResults').append(
@@ -143,7 +145,8 @@ $('#videoNav').on('click', function(Event){
       sortBy: "popularity", 
       apiKey: newsAPIKey,
     }
-
+    
+    console.log(searchTerm);
     const newsQueryString = formatQueryParams(params)
     //console.log(newsQueryString);
 
@@ -169,12 +172,35 @@ $('#videoNav').on('click', function(Event){
   function displayNewsResults (newsResults){
     console.log(newsResults);
     console.log(newsResults.articles[0].url);
+    
+    //  let newsImage = `${newsResults.articles[i].urlToImage}`;
+    // console.log(newsImage);
+    
+    
+    // <li><img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/></li>
+
     $('#newsResults').empty();
-    // if author is null then display 
     for(let i = 0; i < 10 ; i++){
+
+      let newsImage = `${newsResults.articles[i].urlToImage}`;
+
+      newsImageCheck(newsImage);
+
+      function newsImageCheck(){
+        if (newsImage == 'null'){
+          $('#newsResults').append(
+            `<li><p>(Sorry No Image for this Article)</p></li>`
+          )
+          
+        }
+        else {
+          $('#newsResults').append(`<li><img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/></li>`)
+        }
+      }
+
       $('#newsResults').append(
-        `<li><img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/><a href="${newsResults.articles[i].url}">
-        ${newsResults.articles[i].title}</a></<p><p>${newsResults.articles[i].source.name}</p>
+        `<li><a href="${newsResults.articles[i].url}">
+        ${newsResults.articles[i].title}</a><p>${newsResults.articles[i].source.name}</p>
         <p>By ${newsResults.articles[i].author}</p>
         <p class="newsD">${newsResults.articles[i].description}</p>
         </li><br>`
@@ -192,7 +218,7 @@ $('#videoNav').on('click', function(Event){
         /* if the call is successful (status 200 OK) show results */
         .done(function(result) {
             /* if the results are meeningful, we can just console.log them */
-            console.log(result);
+            // console.log(result);
             //console.log(result.query.pages[737].title);
             if (result.query.length != 0){
               let pageIDArray = Object.keys(result.query.pages);
@@ -215,9 +241,11 @@ $('#videoNav').on('click', function(Event){
   function showWikiResults(pageID, pageTitle, pageExtract, pageThumnail){
    //let dataThumnail = Object.keys(pageThumnail).map(key => ({key, value: pageThumnail[key]}));
    //console.log(dataThumnail[0].value);
-   console.log(pageThumnail.source)
+  //  console.log(pageThumnail.source)
 
-    console.log(pageTitle, pageExtract, pageThumnail);
+    // console.log(pageTitle, pageExtract, pageThumnail);
+    
+
       $('#wikiResults').empty();
       $('#wikiResults').append(
         `<h2>${pageTitle}</h2>
@@ -241,11 +269,11 @@ $('#videoNav').on('click', function(Event){
       units: fUnit,
     }
 
-    console.log(params);
+    // console.log(params);
     const queryString = formatQueryParams(params);
-    console.log(queryString);
+    // console.log(queryString);
     const url = weatherSearchUrl+ '?' + queryString;
-    console.log(url);
+    // console.log(url);
     fetch(url)
     .then(response => {
       if (response.ok) {
@@ -258,17 +286,26 @@ $('#videoNav').on('click', function(Event){
       $('#js-error-message').text(`Something went wrong: ${error.message}`);
 
     });
+    
+
     $('.rhide').css('display', 'block');
   }
   
   // #6
   // This function adds the data into the ID where the data will be represented and displayed. 
   function displayWeatherResults(responseJson, countryName){
+
+    // let capitalName = responseJson.name;
+    // getWikiResults(capitalName);
+    // searchHeadLines(capitalName);
+    // youtubeSeach(capitalName); 
+
+    // console.log(responseJson);
     $('#weatherResults').empty();
     //console.log(responseJson)
       $('#weatherResults').append(
 
-        `<h2>The weather in ${countryName} </h2>
+        `<h2>The weather in ${responseJson.name} </h2>
         <p>How does the sky look? <br> ${responseJson.weather[0].main}</p>
         <li>${responseJson.main.temp} &#8457</li>`
       )
