@@ -89,9 +89,9 @@ $('#videoNav').on('click', function(Event){
       // console.log(countryId);
       // console.log(countryName);
       getTheWeather(countryId, countryName);
-      getWikiResults(countryName);
-      searchHeadLines(countryName);
-      youtubeSeach(countryName);
+      // getWikiResults(countryName);
+      // searchHeadLines(countryName);
+      // youtubeSeach(countryName);
 
     })
   }
@@ -140,7 +140,7 @@ $('#videoNav').on('click', function(Event){
 
   function searchHeadLines (searchTerm){
     const params = {
-      q: searchTerm, 
+      qInTitle: searchTerm, 
       language: "en",
       sortBy: "popularity", 
       apiKey: newsAPIKey,
@@ -171,7 +171,7 @@ $('#videoNav').on('click', function(Event){
 
   function displayNewsResults (newsResults){
     console.log(newsResults);
-    console.log(newsResults.articles[0].url);
+    console.log(newsResults.articles[3].urlToImage);
     
     //  let newsImage = `${newsResults.articles[i].urlToImage}`;
     // console.log(newsImage);
@@ -187,11 +187,10 @@ $('#videoNav').on('click', function(Event){
       newsImageCheck(newsImage);
 
       function newsImageCheck(){
-        if (newsImage == 'null'){
+        if ((newsImage == null) || (newsImage == undefined) || (newsImage == '')){
           $('#newsResults').append(
-            `<li><p>(Sorry No Image for this Article)</p></li>`
+            `<li><p>(Sorry no image for this article)</p></li>`
           )
-          
         }
         else {
           $('#newsResults').append(`<li><img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/></li>`)
@@ -295,10 +294,10 @@ $('#videoNav').on('click', function(Event){
   // This function adds the data into the ID where the data will be represented and displayed. 
   function displayWeatherResults(responseJson, countryName){
 
-    // let capitalName = responseJson.name;
-    // getWikiResults(capitalName);
-    // searchHeadLines(capitalName);
-    // youtubeSeach(capitalName); 
+    let capitalName = responseJson.name;
+    getWikiResults(capitalName);
+    searchHeadLines(capitalName);
+    youtubeSeach(capitalName); 
 
     // console.log(responseJson);
     $('#weatherResults').empty();
