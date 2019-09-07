@@ -89,7 +89,7 @@ $('#videoNav').on('click', function(Event){
       // console.log(countryId);
       // console.log(countryName);
       getTheWeather(countryId, countryName);
-      // getWikiResults(countryName);
+      getWikiResults(countryName);
       // searchHeadLines(countryName);
       // youtubeSeach(countryName);
 
@@ -171,7 +171,7 @@ $('#videoNav').on('click', function(Event){
 
   function displayNewsResults (newsResults){
     console.log(newsResults);
-    console.log(newsResults.articles[3].urlToImage);
+    console.log(newsResults.articles[2].urlToImage);
     
     //  let newsImage = `${newsResults.articles[i].urlToImage}`;
     // console.log(newsImage);
@@ -183,11 +183,11 @@ $('#videoNav').on('click', function(Event){
     for(let i = 0; i < 10 ; i++){
 
       let newsImage = `${newsResults.articles[i].urlToImage}`;
-
+      console.log(newsImage);
       newsImageCheck(newsImage);
 
       function newsImageCheck(){
-        if ((newsImage == null) || (newsImage == undefined) || (newsImage == '')){
+        if ((newsImage == null)||(newsImage == 'null') || (newsImage == undefined) || (newsImage == '')){
           $('#newsResults').append(
             `<li><p>(Sorry no image for this article)</p></li>`
           )
@@ -295,7 +295,7 @@ $('#videoNav').on('click', function(Event){
   function displayWeatherResults(responseJson, countryName){
 
     let capitalName = responseJson.name;
-    getWikiResults(capitalName);
+    // getWikiResults(capitalName);
     searchHeadLines(capitalName);
     youtubeSeach(capitalName); 
 
