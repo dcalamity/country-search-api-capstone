@@ -107,12 +107,13 @@
   .maininfo {
     display: flex;
     margin: 5%;
+    margin-top: 20%;
     flex-direction: column;
     padding: 1%;
     align-items: center;
     border-radius: 5px;
     text-align: center;
-    background-color: white;
+    background-color: rgb(236, 229, 209, .9);
     font-size: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
@@ -125,7 +126,7 @@
   }
 
   .pinfo{
-    background-color: white;
+    background-color: whirgb(236, 229, 209, .9)te;
     margin-left: 1px;
     width: 20%;
     text-align: left;
@@ -146,7 +147,7 @@
     align-items: center;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: white;
+    background: rgb(236, 229, 209, .9);
   }
   
   #stBtn {
@@ -163,6 +164,7 @@
     padding: inherit;
     border-radius: 3px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(236, 229, 209, .9);
   }
   .restartBox {
     display: flex;
@@ -186,7 +188,7 @@
 
   .search:hover{
     cursor: pointer;
-    background-color: #c7c2c2d3;
+    background-color: white;
   }
 
   .restartButton {
@@ -203,7 +205,7 @@
 
   .startbutton:hover{
     cursor: pointer;
-    background-color: #d1ceceda;
+    background-color: white;
   }
 
   .restartButton:hover{
@@ -222,7 +224,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f8f4f4;
+    background-color: rgb(236, 229, 209, .9);
     margin: 5% 10% 5% 10%;
     padding: 3%;
     border-radius: 5px;
