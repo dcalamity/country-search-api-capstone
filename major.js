@@ -181,7 +181,7 @@ function displayNewsResults (newsResults){
   $('#newsResults').append(
     `<h1 style="text-align:center">News</h1>`
   )
-  console.log(newsResults.totalResults);
+  // console.log(newsResults.totalResults);
   if (newsResults.totalResults !== 0 ) {
   for(let i = 0; i < 10 ; i++){
 
@@ -338,11 +338,19 @@ function displayWeatherResults(responseJson, countryName){
       $('#weatherResults').append(
         `<i class="fas fa-smog"></i>`
       )
+    } else if (status == 'Rain'){
+      $('#weatherResults').append(
+        `<i class="fas fa-cloud-rain"></i>`
+      ) 
     } else {
       console.log(status);
     } 
+    
+      
 
     
+
+
   }
     $('#weatherResults').append(
 
