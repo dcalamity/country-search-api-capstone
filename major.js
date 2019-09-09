@@ -7,7 +7,7 @@ const fUnit = "imperial";
 const newsSearchURL = "https://newsapi.org/v2/everything";
 const newsAPIKey = 'd7ac7ad4b67b4f8fa9f9e08e2a0210ac';
 const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search";
-const youtubeAPIKey = 'AIzaSyCqH3556Tj7tUwmU0jLz7ttpC_YtExw80U';
+const youtubeAPIKey = 'AIzaSyC6S6t_GMyCosKYnK8ELbpOFDV6jCih5PM';
 
 
 // scrolls to the top when clicked on the top left header in the navigation bar
@@ -82,7 +82,6 @@ function searchCountry (){
   $('.searchBlock').on('click', '.search',  function(event){
     // alert('search initiated')
     $('.searchBlock').hide();
-    $('*').css('background-image', 'none');
     $('.hideNav').css('display','block');
     const countryId = $("#countryls option:selected").val();
     const countryName = $("#countryls option:selected").text();
@@ -146,12 +145,12 @@ function searchHeadLines (searchTerm){
     apiKey: newsAPIKey,
   }
   
-  console.log(searchTerm);
+  // console.log(searchTerm);
   const newsQueryString = formatQueryParams(params)
   //console.log(newsQueryString);
 
   const url = newsSearchURL + '?' + newsQueryString;
-  console.log(url);
+  // console.log(url);
 
   fetch(url)
     .then(response => {
@@ -170,22 +169,27 @@ function searchHeadLines (searchTerm){
 // <p id="news-error-message" class="error-message"></p>
 
 function displayNewsResults (newsResults){
-  console.log(newsResults);
-  console.log(newsResults.articles[2].urlToImage);
+  // console.log(newsResults);
+  // console.log(newsResults.articles[2].urlToImage);
   
   //  let newsImage = `${newsResults.articles[i].urlToImage}`;
   // console.log(newsImage);
   
   
   // <li><img style='height: 100%; width: 100%; object-fit: contain' class="newsImage" src='${newsResults.articles[i].urlToImage}'/></li>
-
   $('#newsResults').empty();
+  $('#newsResults').append(
+    `<h1 style="text-align:center">News</h1>`
+  )
+  console.log(newsResults.totalResults);
+  if (newsResults.totalResults !== 0 ) {
   for(let i = 0; i < 10 ; i++){
 
+    
     let newsImage = `${newsResults.articles[i].urlToImage}`;
-    console.log(newsImage);
+    // console.log(newsImage);
     newsImageCheck(newsImage);
-
+    
     function newsImageCheck(){
       if ((newsImage == null)||(newsImage == 'null') || (newsImage == undefined) || (newsImage == '')){
         $('#newsResults').append(
@@ -203,7 +207,12 @@ function displayNewsResults (newsResults){
       <p>By ${newsResults.articles[i].author}</p>
       <p class="newsD">${newsResults.articles[i].description}</p>
       </li><br>`
-  )}
+  )}  
+  } else {
+    $('#newsResults').append(
+      `<p>Sorry looks like there's no news coverage coming up right now.</p>`
+    )
+  } 
 }
 
 function getWikiResults (searchTerm){
@@ -294,6 +303,13 @@ function getTheWeather(countryId, countryName) {
 // This function adds the data into the ID where the data will be represented and displayed. 
 function displayWeatherResults(responseJson, countryName){
 
+  
+  const weatherStatus = `${responseJson.weather[0].main}`;
+  // backgroundImage(weatherStatus)
+  
+
+  weatherImg(weatherStatus);
+
   let capitalName = responseJson.name;
   // getWikiResults(capitalName);
   searchHeadLines(capitalName);
@@ -302,9 +318,36 @@ function displayWeatherResults(responseJson, countryName){
   // console.log(responseJson);
   $('#weatherResults').empty();
   //console.log(responseJson)
+  weatherImg(weatherStatus);
+  function weatherImg(status){
+    // console.log(status);
+    if (status == 'Clear'){
+      $('#weatherResults').append(
+        `<i class="far fa-sun"></i>`
+      )
+    
+    } else if (status == 'Clouds'){
+      $('#weatherResults').append(
+        `<i class="fas fa-cloud"></i>`
+      )
+    } else if (status == 'Thunderstorm'){
+      $('#weatherResults').append(
+        `<i class="fas fa-cloud-showers-heavy"></i>`
+      )
+    } else if (status == 'Haze'){
+      $('#weatherResults').append(
+        `<i class="fas fa-smog"></i>`
+      )
+    } else {
+      console.log(status);
+    } 
+
+    
+  }
     $('#weatherResults').append(
 
-      `<h2>The weather in ${responseJson.name} </h2>
+      `
+      <h2>The weather in ${responseJson.name} </h2>
       <p>How does the sky look? <br> ${responseJson.weather[0].main}</p>
       <li>${responseJson.main.temp} &#8457</li>`
     )
