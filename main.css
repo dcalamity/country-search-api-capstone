@@ -91,7 +91,11 @@
   #wikiNav, #newsNav, #videoNav, #weatherNav {
     border-right: 1px solid black;
     padding-right: 7px;
+  }
 
+  #wikiNav:hover, #weatherNav:hover, #newsNav:hover, #videoNav:hover, #home:hover {
+    cursor: pointer;
+    color: white;
   }
 
   li {
@@ -139,17 +143,21 @@
   
   .start {
     display: flex;
-    /* margin: 27%; */
     flex-direction: column;
-    padding: 1%;
-    margin-left: 25%;
-    margin-right: 25%;
+    padding: 4%;
+    margin-left: 37%;
+    margin-right: 37%;
     align-items: center;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: rgb(236, 229, 209, .9);
   }
   
+  .start:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+  }
+
   #stBtn {
     padding-bottom: 4%;
   }
@@ -173,7 +181,7 @@
   }
 
   .search {
-    background-color:#e4e2e2d5;
+    background-color: white;
     border: none;
     color: black;
     padding: 3px 25px;
@@ -188,7 +196,7 @@
 
   .search:hover{
     cursor: pointer;
-    background-color: white;
+    background-color: #e4e2e2d5;
   }
 
   .restartButton {
@@ -290,7 +298,6 @@
 
   .apNewsResults, .apWeatherResults, .apWikiResults, .yResults{
     background-color: rgb(236, 229, 209, .9);
-    
   }
 
   .newsD{
@@ -383,8 +390,7 @@
     
 
     .countrySearch {
-      margin: auto;
-      width: 65%;
+      
     }
 
     .nav {
