@@ -144,7 +144,7 @@
   .start {
     display: flex;
     flex-direction: column;
-    padding: 4%;
+    padding: 2%;
     margin-left: 37%;
     margin-right: 37%;
     align-items: center;
@@ -336,7 +336,7 @@
       align-items: center;
       border-radius: 5px;
       text-align: center;
-      background-color: white;
+      background-color: rgb(236, 229, 209, .9);
       font-size: 14px;
       line-height: 23px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -354,7 +354,7 @@
       align-items: center;
       border-radius: 5px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      background: white;
+      background-color: rgb(236, 229, 209, .9);
     }
     .startbutton {
       width: 45%;
