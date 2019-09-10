@@ -10,7 +10,7 @@ View working prototype here: https://dcalamity.github.io/country-search-api-caps
 
 ## Site Map: MVP 
 
-![Site Map](/read-me-images/2020-toyota-supra-first-drive.jpg)
+![Site Map](/read-me-images/Country Search Site Map Diagram.png)
 
 
 ## UX & User Stories: MVP
@@ -44,15 +44,15 @@ Meditation Tracker was built with:
 
 
 ### Responsive
-This app is built to be responsive to smaller screen sizes using a float-grid css and media screen width breakpoint of 700px for smaller screen sizes
+This app is built to be responsive to smaller screen sizes using a flex-box css and media screen width breakpoint of 480px for smaller screen sizes
 
 
 
 ## Development Road Map
 Features for future iterations include: 
-- Add ability to view one insight entry on a separate page
-- Add filter to Insights page to filter by time, app, date
-- Add links to meditation resources
-- Add an app timer to meditate with
+- Add ability to hide and show diferent sections
+- Add ability to search for a specific city
+- Add current country currency value 
+- 
 
 
