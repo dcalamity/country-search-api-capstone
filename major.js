@@ -170,7 +170,9 @@ function searchHeadLines (searchTerm){
 
 function displayNewsResults (newsResults){
   // console.log(newsResults);
-  // console.log(newsResults.articles[2].urlToImage);
+  // console.log(newsResults.articles[7]);
+  
+  
   
   //  let newsImage = `${newsResults.articles[i].urlToImage}`;
   // console.log(newsImage);
@@ -183,7 +185,7 @@ function displayNewsResults (newsResults){
   )
   // console.log(newsResults.totalResults);
   if (newsResults.totalResults !== 0 ) {
-  for(let i = 0; i < 10 ; i++){
+  for(let i = 0; i < 6 ; i++){
 
     
     let newsImage = `${newsResults.articles[i].urlToImage}`;
@@ -342,15 +344,13 @@ function displayWeatherResults(responseJson, countryName){
       $('#weatherResults').append(
         `<i class="fas fa-cloud-rain"></i>`
       ) 
+    } else if (status == 'Fog'){
+      $('#weatherResults').append(
+        `<i class="fas fa-smog"></i>`
+      ) 
     } else {
       console.log(status);
     } 
-    
-      
-
-    
-
-
   }
     $('#weatherResults').append(
 
