@@ -52,6 +52,7 @@
 
   nav h2 {
     margin: 0%; 
+    font-family: 'Oxygen', sans-serif;
   }
 
   .nav {
@@ -81,6 +82,7 @@
     padding: 0;
     font-weight: bold;
     font-size: 23px;
+    font-family: 'Oxygen', sans-serif;
   }
 
   #weatherNav, #wikiNav, #newsNav, #videoNav, #home{
@@ -110,6 +112,7 @@
   
   .maininfo {
     display: flex;
+    font-family: 'Oxygen', sans-serif;
     margin: 5%;
     margin-top: 20%;
     flex-direction: column;
@@ -119,6 +122,7 @@
     text-align: center;
     background-color: rgb(236, 229, 209, .9);
     font-size: 20px;
+    line-height: 1.5;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
@@ -236,6 +240,7 @@
     padding: 3%;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Oxygen', sans-serif;
   }
 
   .resultsBlock {
@@ -316,6 +321,7 @@
 
   .newsD{
     font-family: 'Playfair Display', serif;
+    line-height: 1.4;
   }
 
   #wikiResults {
@@ -354,6 +360,7 @@
       font-size: 14px;
       line-height: 23px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      font-family: 'Cabin', sans-serif;
     }
 
     .start{
