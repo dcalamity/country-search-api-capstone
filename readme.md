@@ -21,6 +21,14 @@ As a user, I want to understand what the web app does as well as where to contin
 
 ![Landing Page Design](/read-me-images/UX-User-Stories-Landing-Page.png)
     
+As a user, I want to be able to search from a drop down list of countries. 
+
+![Search Page Design](/read-me-images/Search-Diagram.png)
+
+As a user, I want to be able to view content in an organized matter.
+
+![Final Page Design](/read-me-images/Final-Page-Design.png)
+
 
 ## Designs
 
