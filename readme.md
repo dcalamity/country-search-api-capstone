@@ -17,9 +17,9 @@ View working prototype here: https://dcalamity.github.io/country-search-api-caps
 
 **Landing Page** 
 
-As a user, I want to understand what the app is so that I can decide if I want to sign up
+As a user, I want to understand what the web app does as well as where to continue
 
-![Landing Page Design](/read-me-images/landing.png)
+![Landing Page Design](/read-me-images/UX-User-Stories-Landing-Page.png)
     
 
 ## Designs
