@@ -34,9 +34,19 @@ As a user, I want to be able to view content in an organized matter.
 
 **Landing Page** 
 
-![Landing Page Design](/read-me-images/landing.png)
+![Landing Page Design](/read-me-images/Landing-Page.png)
 
+**Search Page** 
 
+![Search Page Design](/read-me-images/Search-Page.png)
+
+**Final Page**
+
+![Final Page 1 of 3 Desing](/read-me-images/Final-Page-1.png)
+
+![Final Page 2 of 3 Design](/read-me-images/Final-Page-2.png)
+
+![Final Page 3 of 3 Design](/read-me-images/Final-Page-3.png)
 
 ## Technical
 
