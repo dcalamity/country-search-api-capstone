@@ -71,6 +71,5 @@ Features for future iterations include:
 - Add ability to hide and show diferent sections
 - Add ability to search for a specific city
 - Add current country currency value 
-- 
 
 
