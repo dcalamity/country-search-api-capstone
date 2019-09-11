@@ -10,7 +10,7 @@ View working prototype here: https://dcalamity.github.io/country-search-api-caps
 
 ## Site Map: MVP 
 
-![Site Map](/read-me-images/Country Search Site Map Diagram.png)
+![Site Map](/read-me-images/Country-Search-Site-Map-Diagram.png)
 
 
 ## UX & User Stories: MVP
