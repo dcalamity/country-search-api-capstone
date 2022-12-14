@@ -4,7 +4,7 @@
 const weatherkey = '01dd76c234fd91af1d022bb5b85eb549';
 const weatherSearchUrl = "https://api.openweathermap.org/data/2.5/weather";
 const fUnit = "imperial";
-const newsSearchURL = "https://newsapi.org/v2/everything";
+const newsSearchURL = "https://newsapi.org/v2/top-headlines";
 const newsAPIKey = 'd7ac7ad4b67b4f8fa9f9e08e2a0210ac';
 const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search";
 const youtubeAPIKey = 'AIzaSyC6S6t_GMyCosKYnK8ELbpOFDV6jCih5PM';
@@ -139,15 +139,15 @@ function youtubeSeach (searchTerm){
 //This function searches for headlines from the News API
 function searchHeadLines (searchTerm){
   const params = {
-    qInTitle: searchTerm, 
+    q: searchTerm, 
     language: "en",
     sortBy: "popularity", 
     apiKey: newsAPIKey,
   }
   
-  // console.log(searchTerm);
+  console.log(searchTerm);
   const newsQueryString = formatQueryParams(params)
-  //console.log(newsQueryString);
+  console.log(newsQueryString);
 
   const url = newsSearchURL + '?' + newsQueryString;
   // console.log(url);
